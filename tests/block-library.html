@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CrowdStrike Block Library</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <script type="module" src="/scripts/scripts.js"></script>
+</head>
+<body>
+<header></header>
+<main>
+
+  <!-- ============================================================
+       BLOCK LIBRARY: CrowdStrike EDS Blocks
+       This page documents all 8 custom blocks for the CrowdStrike
+       homepage migration. Each section shows the block name,
+       description, variant list, and a live rendered example.
+       Authors: copy the block markup from any example section
+       into da.live / Google Docs to use it on a page.
+       ============================================================ -->
+
+  <!-- ============================================================
+       INTRO SECTION
+       ============================================================ -->
+  <div>
+    <h1>CrowdStrike Block Library</h1>
+    <p>
+      This library documents all custom EDS blocks built for the CrowdStrike homepage
+      migration. Each block section below contains a live rendered example using real
+      CrowdStrike content. Copy the authored structure into da.live or Google Docs to
+      use the block on any page.
+    </p>
+    <p>
+      <strong>Blocks covered:</strong>
+      cs-hero &bull;
+      cs-resource-cards &bull;
+      cs-feature-pillars &bull;
+      cs-analyst-recognition &bull;
+      cs-pricing-table &bull;
+      cs-testimonials &bull;
+      cs-product-showcase &bull;
+      cs-adversary-cta
+    </p>
+  </div>
+
+  <!-- ============================================================
+       1. cs-hero
+       Variants: default (carousel), static, dark, image
+       ============================================================ -->
+  <div>
+    <h2>cs-hero — Hero Carousel</h2>
+    <p>
+      Full-width hero carousel with rotating panels. Each row in the block table
+      represents one slide. The block auto-advances and supports dot and arrow
+      navigation. An empty row separates individual panels.
+    </p>
+    <p><strong>Variants:</strong> default (carousel) | static | dark | image</p>
+
+    <h3>Default variant — rotating carousel (2 panels)</h3>
+    <p>
+      Author by repeating the 5-row panel pattern (eyebrow, headline, body, CTA row,
+      background image). Insert a fully empty row between panels as a separator.
+    </p>
+    <div class="cs-hero">
+      <div><div>Award Recognition</div></div>
+      <div><div>A Leader for the seventh consecutive time</div></div>
+      <div><div>2026 Gartner® Magic Quadrant™ for Endpoint Protection</div></div>
+      <div>
+        <div><a href="https://www.crowdstrike.com/en-us/resources/reports/gartner-mq/">Download report</a></div>
+      </div>
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div>AI is being adopted faster than companies can secure it.</div></div>
+      <div><div>Secure AI with the platform built to stop breaches.</div></div>
+      <div>
+        <div><a href="https://www.crowdstrike.com/en-us/why-crowdstrike/securing-the-ai-future-by-securing-ai-leaders/">Learn more</a></div>
+      </div>
+      <div><div></div></div>
+    </div>
+
+    <h3>Static variant — single panel, no rotation</h3>
+    <p>
+      Add <code>static</code> to the block name. No carousel controls are rendered.
+      Suitable for interior pages where a fixed hero is preferred.
+    </p>
+    <div class="cs-hero static">
+      <div><div>Frontier AI Readiness</div></div>
+      <div><div>Secure AI with the Platform Built to Stop Breaches</div></div>
+      <div><div>CrowdStrike Falcon delivers real-time protection across your entire AI attack surface.</div></div>
+      <div>
+        <div><a href="https://www.crowdstrike.com/platform/ai-security/">Explore AI Security</a></div>
+      </div>
+      <div><div></div></div>
+    </div>
+
+    <h3>Dark variant — navy background</h3>
+    <p>
+      Add <code>dark</code> to the block name. Same row/cell structure as default.
+      Applies a dark navy background instead of the red-to-blue gradient. Use when
+      adjacent sections are light and visual contrast is needed.
+    </p>
+    <div class="cs-hero dark">
+      <div><div></div></div>
+      <div><div>Stop Breaches Before They Happen</div></div>
+      <div><div>The CrowdStrike Falcon platform protects your business from the most sophisticated adversaries.</div></div>
+      <div>
+        <div><a href="https://www.crowdstrike.com/free-trial/">Start free trial</a></div>
+        <div><a href="https://www.crowdstrike.com/en-us/contact-sales/">Contact sales</a></div>
+      </div>
+      <div><div></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       2. cs-resource-cards
+       Variants: default, featured, no-image
+       ============================================================ -->
+  <div>
+    <h2>cs-resource-cards — Resource and News Cards</h2>
+    <p>
+      Horizontal strip of resource and news cards. Renders as a 3-column CSS Grid on
+      desktop (900px+), 2 columns at 600px, single column on mobile. Each card is a
+      self-contained group of rows: optional image, tag/category label, headline link,
+      and optional teaser text.
+    </p>
+    <p><strong>Variants:</strong> default | featured | no-image</p>
+
+    <h3>No-image variant — text-only cards</h3>
+    <p>
+      Add <code>no-image</code> to the block name. Image cells are omitted entirely.
+      Each card is 3 rows: tag label, headline link, optional teaser.
+      This is the variant used on the CrowdStrike homepage.
+    </p>
+    <div class="cs-resource-cards no-image">
+      <div><div>Frontier AI Readiness</div></div>
+      <div><div><a href="https://www.crowdstrike.com/blog/frontier-ai-readiness/">New Frontier AI Readiness and Resilience Service finds exploitable risk before adversaries weaponize it</a></div></div>
+      <div><div></div></div>
+      <div><div>White Paper</div></div>
+      <div><div><a href="https://www.crowdstrike.com/resources/white-papers/securing-ai/">Securing AI Where It Executes: The Endpoint Is the New Control Point for AI Agent Security</a></div></div>
+      <div><div></div></div>
+      <div><div>Counter Adversary Operations</div></div>
+      <div><div><a href="https://www.crowdstrike.com/blog/disrupting-glassworm/">Disrupting Glassworm: Inside CrowdStrike&#39;s Takedown of a Developer-Targeting Botnet</a></div></div>
+      <div><div></div></div>
+    </div>
+
+    <h3>Default variant — cards with images</h3>
+    <p>
+      Each card is 4 rows: optional image, tag label, headline link, optional teaser.
+      The image cell is authored as an inline image. If the image cell is left empty,
+      no empty container is rendered.
+    </p>
+    <div class="cs-resource-cards">
+      <div><div>Frontier AI Readiness</div></div>
+      <div><div><a href="https://www.crowdstrike.com/blog/frontier-ai-readiness/">New Frontier AI Readiness and Resilience Service finds exploitable risk before adversaries weaponize it</a></div></div>
+      <div><div>Learn how CrowdStrike identifies exploitable risk before adversaries can act.</div></div>
+      <div><div></div></div>
+      <div><div>White Paper</div></div>
+      <div><div><a href="https://www.crowdstrike.com/resources/white-papers/securing-ai/">Securing AI Where It Executes</a></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+      <div><div>Counter Adversary Operations</div></div>
+      <div><div><a href="https://www.crowdstrike.com/blog/disrupting-glassworm/">Disrupting Glassworm: Inside CrowdStrike&#39;s Takedown of a Developer-Targeting Botnet</a></div></div>
+      <div><div></div></div>
+      <div><div></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       3. cs-feature-pillars
+       Variants: default (with icons), dark, 2-col, no-icon
+       ============================================================ -->
+  <div>
+    <h2>cs-feature-pillars — Feature Pillar Cards</h2>
+    <p>
+      Three-column feature cards section with an optional intro row. Communicates the
+      platform's key value propositions. Row 1 is the block-level heading, row 2 is
+      optional intro text, then pillar card groups follow.
+    </p>
+    <p><strong>Variants:</strong> default (with icons) | dark | 2-col | no-icon</p>
+
+    <h3>No-icon variant — text-only pillars</h3>
+    <p>
+      Add <code>no-icon</code> to the block name. Icon rows are omitted. Each pillar
+      card is 3 rows: headline, body, optional CTA. This is the variant used on the
+      CrowdStrike homepage.
+    </p>
+    <div class="cs-feature-pillars no-icon">
+      <div><div>The Future of Security Starts Here</div></div>
+      <div><div>The AI era is transforming cybersecurity across three critical fronts</div></div>
+      <div><div>Accelerate the SOC with AI</div></div>
+      <div><div>Drive agentic SOC transformation with unified data and agentic workflows to stop breaches faster.</div></div>
+      <div><div></div></div>
+      <div><div>Stop AI-accelerated adversaries</div></div>
+      <div><div>Prepare for frontier AI-powered vulnerability exploitation and stop adversaries who weaponize AI to attack faster than ever before.</div></div>
+      <div><div></div></div>
+      <div><div>Accelerate secure AI adoption and innovation</div></div>
+      <div><div>Secure AI with visibility, governance, and real-time protection against threats like shadow AI and prompt injection.</div></div>
+      <div><div></div></div>
+    </div>
+
+    <h3>Dark variant — navy background with icons</h3>
+    <p>
+      Add <code>dark</code> to the block name. Same row/cell structure as default but
+      with a dark navy background and white text. Icon references use EDS icon syntax.
+    </p>
+    <div class="cs-feature-pillars dark">
+      <div><div>Platform Capabilities</div></div>
+      <div><div>The Falcon platform secures every surface across your enterprise.</div></div>
+      <div><div>Accelerate the SOC with AI</div></div>
+      <div><div>Agentic SOC workflows stop breaches faster with unified data and AI-driven automation.</div></div>
+      <div><div></div></div>
+      <div><div>Stop AI-accelerated adversaries</div></div>
+      <div><div>Real-time protection against adversaries who weaponize AI to attack at machine speed.</div></div>
+      <div><div></div></div>
+      <div><div>Secure AI adoption</div></div>
+      <div><div>Visibility, governance, and runtime protection against shadow AI and prompt injection threats.</div></div>
+      <div><div></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       4. cs-analyst-recognition
+       Variants: default, carousel, compact
+       ============================================================ -->
+  <div>
+    <h2>cs-analyst-recognition — Analyst Recognition Cards</h2>
+    <p>
+      Grid of analyst recognition cards. Displays awards and analyst report
+      placements. Row 1 is the optional section heading. Each card is 4 rows:
+      optional analyst logo image, recognition headline, optional award subtitle,
+      CTA link.
+    </p>
+    <p><strong>Variants:</strong> default | carousel | compact</p>
+
+    <h3>Default variant — grid of recognition cards</h3>
+    <p>
+      The section heading is row 1 of the block. Each card group is 4 rows: logo
+      image (leave empty if no image asset is available), headline, subtitle,
+      CTA link. An empty row follows each card as a separator.
+    </p>
+    <div class="cs-analyst-recognition">
+      <div><div>Recognition by trusted analysts</div></div>
+      <div><div></div></div>
+      <div><div>A Leader for the seventh consecutive time</div></div>
+      <div><div>2026 Gartner® Magic Quadrant™ for Endpoint Protection</div></div>
+      <div><div><a href="https://www.crowdstrike.com/resources/reports/gartner-mq/">Download report</a></div></div>
+      <div><div></div></div>
+      <div><div>A Leader in the inaugural Gartner Magic Quadrant™ for Cyberthreat Intelligence Technologies</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/resources/reports/gartner-cti/">Download report</a></div></div>
+      <div><div></div></div>
+      <div><div>CrowdStrike Named a Leader in the IDC MarketScape for CNAPP</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/resources/reports/idc-cnapp/">Download excerpt</a></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       5. cs-pricing-table
+       Variants: default (tabbed), single-billing, compact, enterprise
+       ============================================================ -->
+  <div>
+    <h2>cs-pricing-table — Pricing Plan Comparison</h2>
+    <p>
+      Tabbed pricing section with plan comparison. Supports monthly and annual
+      billing tabs. Plans are authored as columns; features are rows. The
+      <code>recommended</code> keyword in the recommended-flag row activates a
+      visual badge on that plan.
+    </p>
+    <p><strong>Variants:</strong> default (tabbed) | single-billing | compact | enterprise</p>
+
+    <h3>Default variant — monthly/annual tabs, 3 plans</h3>
+    <p>
+      Row 1: section heading + subtitle (2 columns).
+      Row 2: billing tab labels (2 columns).
+      Row 3: plan names (1 column per plan).
+      Row 4: monthly prices.
+      Row 5: annual prices.
+      Row 6: CTA links.
+      Row 7: recommended flag (empty = not recommended, literal text "recommended" = flagged).
+      Rows 8+: feature rows using format <code>Feature name: included</code> or
+      <code>Feature name: not included</code>.
+    </p>
+    <div class="cs-pricing-table">
+      <div>
+        <div>Tailored bundles to stop breaches</div>
+        <div>Flexible pricing, your way — pay monthly or save with annual billing.</div>
+      </div>
+      <div>
+        <div>Monthly pricing</div>
+        <div>Annual pricing</div>
+      </div>
+      <div>
+        <div>Free Trial</div>
+        <div>Security Essentials</div>
+        <div>Enhanced Protection</div>
+      </div>
+      <div>
+        <div>No credit card required</div>
+        <div>$14.99/mo</div>
+        <div>$19.99/mo</div>
+      </div>
+      <div>
+        <div>Free</div>
+        <div>$59.99/yr</div>
+        <div>$99.99/yr</div>
+      </div>
+      <div>
+        <div><a href="https://www.crowdstrike.com/free-trial/">Start free trial</a></div>
+        <div><a href="https://www.crowdstrike.com/store/">Add to cart</a></div>
+        <div><a href="https://www.crowdstrike.com/store/">Add to cart</a></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div>recommended</div>
+      </div>
+      <div>
+        <div>Next-Gen Antivirus: included</div>
+        <div>Next-Gen Antivirus: included</div>
+        <div>Next-Gen Antivirus: included</div>
+      </div>
+      <div>
+        <div>Device Control: not included</div>
+        <div>Device Control: included</div>
+        <div>Device Control: included</div>
+      </div>
+      <div>
+        <div>Mobile Device Protection: not included</div>
+        <div>Mobile Device Protection: not included</div>
+        <div>Mobile Device Protection: included</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       6. cs-testimonials
+       Variants: default (carousel), light, static, logo-only
+       ============================================================ -->
+  <div>
+    <h2>cs-testimonials — Customer Testimonials Carousel</h2>
+    <p>
+      Customer testimonial carousel with auto-rotation. Row 1 is the section heading
+      and optional view-all link (two-column header row). Each testimonial card is 4
+      rows: quote, attribution, optional logo image, optional CTA link.
+    </p>
+    <p><strong>Variants:</strong> default (dark carousel) | light | static | logo-only</p>
+
+    <h3>Default variant — dark background carousel</h3>
+    <p>
+      Row 1 spans 2 columns: heading text and an optional view-all link.
+      Each card group is 4 rows: quote text, attribution (Name, Title, Company),
+      optional logo image (leave empty if unavailable), optional CTA link.
+    </p>
+    <div class="cs-testimonials">
+      <div>
+        <div>Customers trust CrowdStrike to protect what matters most</div>
+        <div><a href="https://www.crowdstrike.com/en-us/customers/">View all customer stories</a></div>
+      </div>
+      <div><div>Our ability to respond to events has gone through the roof. Not only are we saving money, we&#39;re making our organization more secure.</div></div>
+      <div><div>David Anderson, Deputy CISO, Travel + Leisure</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/en-us/customers/travel-leisure/">Hear their story</a></div></div>
+      <div><div>Most SIEMs are slow and clunky. With Falcon Next-Gen SIEM, we were getting results on day one.</div></div>
+      <div><div>Nathan Kelly, Sr. Information Security Engineer, TaylorMade Golf</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/en-us/customers/taylormade-golf/">Hear their story</a></div></div>
+      <div><div>Going from a bare-bones stack to a robust, integrated platform used to feel like a pipe dream. Now it&#39;s our reality.</div></div>
+      <div><div>Richard Lee, Director of Cybersecurity and Privacy, the ALDO Group</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/en-us/customers/aldo-group/">Hear their story</a></div></div>
+    </div>
+
+    <h3>Light variant — white background</h3>
+    <p>
+      Add <code>light</code> to the block name. Identical structure to default.
+      Applies a white or light grey background with dark text. Use when adjacent
+      sections are dark.
+    </p>
+    <div class="cs-testimonials light">
+      <div>
+        <div>What our customers say</div>
+        <div><a href="https://www.crowdstrike.com/en-us/customers/">View all customer stories</a></div>
+      </div>
+      <div><div>Our ability to respond to events has gone through the roof. Not only are we saving money, we&#39;re making our organization more secure.</div></div>
+      <div><div>David Anderson, Deputy CISO, Travel + Leisure</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/en-us/customers/travel-leisure/">Hear their story</a></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       7. cs-product-showcase
+       Variants: default (dark), light, vertical-tabs, icon-tabs
+       ============================================================ -->
+  <div>
+    <h2>cs-product-showcase — Product Tabs Showcase</h2>
+    <p>
+      Tabbed product explorer. Each tab represents a product area. Clicking a tab
+      reveals a panel with headline, description, image, and CTA. Row 1 is the
+      optional section heading. Each tab/panel group is 5 rows: tab label, product
+      headline, product description, optional image, CTA link.
+    </p>
+    <p><strong>Variants:</strong> default (dark) | light | vertical-tabs | icon-tabs</p>
+
+    <h3>Default variant — dark background, horizontal tabs, 4 products</h3>
+    <p>
+      Row 1: section heading. Each tab group (5 rows): tab label, product headline,
+      description, image (leave empty if unavailable), CTA link. The first tab is
+      active on initial render.
+    </p>
+    <div class="cs-product-showcase">
+      <div><div>Experience industry-leading solutions from one powerful platform</div></div>
+      <div><div>Secure your AI</div></div>
+      <div><div>Secure your AI</div></div>
+      <div><div>Prevent data leaks and secure AI agents, apps, models, identities, and infrastructure — all from a single platform.</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/platform/ai-security/">Discover AI Security</a></div></div>
+      <div><div>Secure your cloud</div></div>
+      <div><div>CrowdStrike Falcon® Cloud Security</div></div>
+      <div><div>Stop cloud breaches with unified agent and agentless protection.</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/platform/cloud-security/">Discover Cloud Security</a></div></div>
+      <div><div>Stop identity attacks</div></div>
+      <div><div>CrowdStrike Falcon® Next-Gen Identity Security</div></div>
+      <div><div>Stop breaches faster with unified security for every identity</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/platform/identity-security/">Discover Identity Security</a></div></div>
+      <div><div>The next SOC era</div></div>
+      <div><div>CrowdStrike Falcon® Next-Gen SIEM</div></div>
+      <div><div>The AI-native engine of the modern SOC</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/platform/next-gen-siem/">Discover Next-Gen SIEM</a></div></div>
+    </div>
+
+    <h3>Light variant — white background</h3>
+    <p>
+      Add <code>light</code> to the block name. Identical row/cell structure to
+      default. Applies a white or very light background with dark text. Tab indicator
+      uses CrowdStrike red.
+    </p>
+    <div class="cs-product-showcase light">
+      <div><div>Platform highlights</div></div>
+      <div><div>AI Security</div></div>
+      <div><div>Secure your AI</div></div>
+      <div><div>Prevent data leaks and secure AI agents, apps, models, identities, and infrastructure.</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/platform/ai-security/">Discover AI Security</a></div></div>
+      <div><div>Cloud Security</div></div>
+      <div><div>CrowdStrike Falcon® Cloud Security</div></div>
+      <div><div>Stop cloud breaches with unified agent and agentless protection.</div></div>
+      <div><div></div></div>
+      <div><div><a href="https://www.crowdstrike.com/platform/cloud-security/">Discover Cloud Security</a></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       8. cs-adversary-cta
+       Variants: default, split, light, with-eyebrow
+       ============================================================ -->
+  <div>
+    <h2>cs-adversary-cta — Adversary CTA</h2>
+    <p>
+      Full-width dark call-to-action section. Minimal content: optional eyebrow
+      label, headline, body text, primary CTA button, optional secondary CTA.
+      The eyebrow cell is always row 1 — leave it empty if not needed.
+    </p>
+    <p><strong>Variants:</strong> default | split | light | with-eyebrow</p>
+
+    <h3>Default variant — centred, dark background</h3>
+    <p>
+      5 rows: eyebrow (empty = no eyebrow rendered), headline, body text, primary
+      CTA link, secondary CTA (empty = not rendered). No JavaScript required for
+      this variant — CSS-only block.
+    </p>
+    <div class="cs-adversary-cta">
+      <div><div></div></div>
+      <div><div>Know them. Find them. Stop them.</div></div>
+      <div><div>Adversaries are operating with unprecedented stealth, and today&#39;s attacks take only minutes to succeed. Discover the adversaries targeting your organization.</div></div>
+      <div><div><a href="https://www.crowdstrike.com/adversary-universe/">Explore Adversary Universe</a></div></div>
+      <div><div></div></div>
+    </div>
+
+    <h3>With-eyebrow variant — prominent eyebrow label</h3>
+    <p>
+      Add <code>with-eyebrow</code> to the block name. The eyebrow cell is populated
+      and displayed as a small-caps badge above the headline. Same 5-row structure
+      as default.
+    </p>
+    <div class="cs-adversary-cta with-eyebrow">
+      <div><div>Adversary Intelligence</div></div>
+      <div><div>Know them. Find them. Stop them.</div></div>
+      <div><div>Adversaries are operating with unprecedented stealth. CrowdStrike tracks 230+ named adversary groups so you stay ahead of the threat.</div></div>
+      <div><div><a href="https://www.crowdstrike.com/adversary-universe/">Explore Adversary Universe</a></div></div>
+      <div><div><a href="https://www.crowdstrike.com/free-trial/">Start free trial</a></div></div>
+    </div>
+
+    <h3>Split variant — headline left, CTA right (desktop)</h3>
+    <p>
+      Add <code>split</code> to the block name. On desktop (min-width 900px), the
+      headline and body text are displayed on the left column and the CTA button is
+      aligned to the right. Falls back to stacked centred layout on mobile.
+    </p>
+    <div class="cs-adversary-cta split">
+      <div><div></div></div>
+      <div><div>Ready to stop breaches?</div></div>
+      <div><div>Join thousands of organizations that trust CrowdStrike to protect their endpoints, cloud, and identities.</div></div>
+      <div><div><a href="https://www.crowdstrike.com/free-trial/">Start free trial</a></div></div>
+      <div><div><a href="https://www.crowdstrike.com/en-us/contact-sales/">Contact sales</a></div></div>
+    </div>
+  </div>
+
+</main>
+<footer></footer>
+</body>
+</html>
