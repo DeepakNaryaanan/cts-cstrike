@@ -1,0 +1,195 @@
+/* cs-pricing-table block */
+
+.cs-pricing-table {
+  padding: var(--cs-space-xl) var(--cs-space-md);
+}
+
+.cs-pricing-table-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--cs-space-xl);
+}
+
+.cs-pricing-table-heading {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  margin: 0 0 var(--cs-space-xs);
+  color: var(--cs-color-text-primary);
+}
+
+.cs-pricing-table-subtitle {
+  font-size: var(--body-font-size-s);
+  color: var(--cs-color-text-tertiary);
+  margin: 0 0 var(--cs-space-md);
+}
+
+.cs-pricing-table-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-bottom: 2px solid var(--cs-color-border);
+  margin-bottom: var(--cs-space-lg);
+}
+
+.cs-pricing-table-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: var(--cs-space-sm) var(--cs-space-md);
+  font-size: var(--body-font-size-s);
+  color: var(--cs-color-text-secondary);
+  cursor: pointer;
+  margin-bottom: -2px;
+  font-family: var(--body-font-family);
+  transition: var(--cs-transition-button);
+}
+
+.cs-pricing-table-tab:hover {
+  color: var(--cs-color-text-primary);
+}
+
+.cs-pricing-table-tab.is-active {
+  color: var(--cs-color-brand-primary);
+  border-bottom-color: var(--cs-color-brand-primary);
+  font-weight: var(--cs-font-weight-ui);
+}
+
+.cs-pricing-table-tab:focus-visible {
+  outline: 3px solid var(--cs-color-focus);
+  outline-offset: 2px;
+}
+
+.cs-pricing-table-plans {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--cs-space-md);
+  max-width: var(--cs-grid-max-width);
+  margin: 0 auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.cs-pricing-table-plan {
+  background: var(--cs-color-surface-card);
+  border: 1px solid var(--cs-color-border);
+  border-radius: var(--cs-radius-card);
+  padding: var(--cs-space-md);
+  position: relative;
+  box-shadow: var(--cs-shadow-card);
+  scroll-snap-align: start;
+}
+
+.cs-pricing-table-plan.is-featured {
+  border-top: 4px solid;
+  border-image: var(--cs-gradient-red-sweep) 1;
+  box-shadow: var(--cs-shadow-card-hover);
+}
+
+.cs-pricing-table-badge {
+  display: inline-block;
+  background: var(--cs-color-brand-primary);
+  color: var(--cs-palette-white);
+  font-size: var(--body-font-size-xs);
+  font-weight: var(--cs-font-weight-ui);
+  padding: 2px var(--cs-space-xs);
+  border-radius: var(--cs-radius-badge);
+  margin-bottom: var(--cs-space-xs);
+}
+
+.cs-pricing-table-plan-name {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  margin: 0 0 var(--cs-space-xs);
+  color: var(--cs-color-text-primary);
+}
+
+.cs-pricing-table-price {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--cs-color-brand-primary);
+  margin: var(--cs-space-xs) 0 var(--cs-space-sm);
+}
+
+.cs-pricing-table-price.hidden {
+  display: none;
+}
+
+.cs-pricing-table-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cs-btn-primary-bg);
+  border: 2px solid var(--cs-btn-primary-border);
+  color: var(--cs-btn-primary-text);
+  border-radius: var(--cs-btn-primary-radius);
+  padding: var(--cs-btn-primary-padding-y) var(--cs-btn-primary-padding-x);
+  font-size: var(--body-font-size-xs);
+  font-weight: var(--cs-font-weight-ui);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--cs-transition-button);
+  margin-bottom: var(--cs-space-md);
+  width: 100%;
+}
+
+.cs-pricing-table-cta:hover,
+.cs-pricing-table-cta:focus-visible {
+  background-color: var(--cs-btn-primary-bg-hover);
+  border-color: var(--cs-btn-primary-border-hover);
+}
+
+.cs-pricing-table-cta:focus-visible {
+  outline: 3px solid var(--cs-color-focus);
+  outline-offset: 2px;
+}
+
+.cs-pricing-table-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cs-pricing-table-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cs-space-xs);
+  padding: var(--cs-space-xs) 0;
+  border-top: 1px solid var(--cs-color-border);
+  font-size: var(--body-font-size-s);
+  color: var(--cs-color-text-primary);
+}
+
+.cs-pricing-table-feature-icon {
+  font-weight: 700;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.cs-pricing-table-feature.is-included .cs-pricing-table-feature-icon {
+  color: var(--cs-color-brand-primary);
+}
+
+.cs-pricing-table-feature.is-excluded .cs-pricing-table-feature-icon {
+  color: var(--cs-color-text-secondary);
+}
+
+@media (width >= 600px) {
+  .cs-pricing-table-plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cs-pricing-table {
+    padding: var(--cs-space-xxxl) var(--cs-space-xxl);
+  }
+
+  .cs-pricing-table-plans {
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+}

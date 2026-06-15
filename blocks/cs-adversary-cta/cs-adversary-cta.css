@@ -1,0 +1,145 @@
+/* cs-adversary-cta block */
+
+.cs-adversary-cta {
+  background: var(--cs-gradient-dark-section);
+  color: var(--cs-color-text-on-dark);
+  padding: var(--cs-space-xxxl) var(--cs-space-md);
+  text-align: center;
+}
+
+.cs-adversary-cta.light {
+  background: var(--background-color);
+  color: var(--cs-color-text-primary);
+}
+
+.cs-adversary-cta-content {
+  max-width: var(--cs-grid-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--cs-space-lg);
+}
+
+.cs-adversary-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-space-sm);
+}
+
+.cs-adversary-cta-eyebrow {
+  font-size: var(--cs-font-size-eyebrow);
+  font-weight: var(--cs-font-weight-eyebrow);
+  letter-spacing: var(--cs-letter-spacing-eyebrow);
+  text-transform: var(--cs-text-transform-eyebrow);
+  color: var(--cs-color-brand-primary);
+  margin: 0;
+}
+
+.cs-adversary-cta-headline {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--cs-color-text-on-dark);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cs-adversary-cta.light .cs-adversary-cta-headline {
+  color: var(--cs-color-text-primary);
+}
+
+.cs-adversary-cta-body {
+  font-size: var(--body-font-size-s);
+  color: var(--cs-color-text-on-dark-secondary);
+  margin: 0;
+  max-width: 700px;
+}
+
+.cs-adversary-cta.light .cs-adversary-cta-body {
+  color: var(--cs-color-text-tertiary);
+}
+
+.cs-adversary-cta-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-space-sm);
+  align-items: center;
+}
+
+.cs-adversary-cta-btn-primary {
+  background-color: var(--cs-btn-ghost-bg);
+  border: 2px solid var(--cs-btn-ghost-border);
+  color: var(--cs-btn-ghost-text);
+  border-radius: var(--cs-btn-primary-radius);
+  padding: var(--cs-btn-primary-padding-y) var(--cs-btn-primary-padding-x);
+  font-weight: var(--cs-font-weight-ui);
+  font-size: var(--body-font-size-s);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--cs-transition-button);
+}
+
+.cs-adversary-cta-btn-primary:hover,
+.cs-adversary-cta-btn-primary:focus-visible {
+  background-color: var(--cs-btn-ghost-bg-hover);
+  color: var(--cs-btn-ghost-text-hover);
+}
+
+.cs-adversary-cta.light .cs-adversary-cta-btn-primary {
+  background-color: var(--cs-btn-primary-bg);
+  border-color: var(--cs-btn-primary-border);
+  color: var(--cs-btn-primary-text);
+}
+
+.cs-adversary-cta.light .cs-adversary-cta-btn-primary:hover,
+.cs-adversary-cta.light .cs-adversary-cta-btn-primary:focus-visible {
+  background-color: var(--cs-btn-primary-bg-hover);
+}
+
+.cs-adversary-cta-btn-secondary {
+  background-color: transparent;
+  border: none;
+  color: var(--cs-color-text-on-dark-secondary);
+  font-size: var(--body-font-size-s);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: var(--body-font-family);
+  padding: 0;
+}
+
+.cs-adversary-cta-btn-secondary:hover {
+  color: var(--cs-color-text-on-dark);
+}
+
+.cs-adversary-cta-btn-secondary:focus-visible {
+  outline: 3px solid var(--cs-color-focus);
+  outline-offset: 2px;
+}
+
+@media (width >= 600px) {
+  .cs-adversary-cta-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (width >= 900px) {
+  .cs-adversary-cta.split .cs-adversary-cta-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+  }
+
+  .cs-adversary-cta.split .cs-adversary-cta-actions {
+    flex-shrink: 0;
+  }
+}
+
+@media (width >= 1200px) {
+  .cs-adversary-cta {
+    padding: var(--cs-space-xxxl) var(--cs-space-xxl);
+  }
+}

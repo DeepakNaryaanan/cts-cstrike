@@ -1,0 +1,234 @@
+/* cs-hero block — all selectors scoped to .cs-hero */
+
+.cs-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--cs-gradient-hero);
+  color: var(--cs-color-text-on-dark);
+}
+
+.cs-hero.dark {
+  background: var(--cs-gradient-hero-dark);
+}
+
+.cs-hero-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.cs-hero-slide {
+  display: none;
+  position: relative;
+  min-height: 480px;
+  padding: var(--cs-space-xxl) var(--cs-space-md);
+  align-items: center;
+}
+
+.cs-hero-slide.is-active {
+  display: flex;
+}
+
+.cs-hero-slide-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.cs-hero-slide-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cs-hero-slide-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--cs-grid-max-width);
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.cs-hero-eyebrow {
+  font-size: var(--cs-font-size-eyebrow);
+  font-weight: var(--cs-font-weight-eyebrow);
+  letter-spacing: var(--cs-letter-spacing-eyebrow);
+  text-transform: var(--cs-text-transform-eyebrow);
+  color: var(--cs-color-brand-primary);
+  margin: 0 0 var(--cs-space-xs);
+}
+
+.cs-hero.dark .cs-hero-eyebrow {
+  color: var(--cs-palette-white);
+}
+
+.cs-hero-slide-content h1 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  color: var(--cs-color-text-on-dark);
+  margin: 0 0 var(--cs-space-sm);
+  line-height: 1.15;
+}
+
+.cs-hero-body {
+  font-size: var(--body-font-size-s);
+  color: var(--cs-color-text-on-dark);
+  margin: 0 0 var(--cs-space-md);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cs-hero-slide-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-space-xs);
+  align-items: center;
+  margin-top: var(--cs-space-md);
+}
+
+.cs-hero-slide-ctas .button.primary {
+  background-color: var(--cs-btn-primary-bg);
+  border-color: var(--cs-btn-primary-border);
+  color: var(--cs-btn-primary-text);
+  border-radius: var(--cs-btn-primary-radius);
+  padding: var(--cs-btn-primary-padding-y) var(--cs-btn-primary-padding-x);
+  font-weight: var(--cs-font-weight-ui);
+  transition: var(--cs-transition-button);
+}
+
+.cs-hero-slide-ctas .button.primary:hover,
+.cs-hero-slide-ctas .button.primary:focus-visible {
+  background-color: var(--cs-btn-primary-bg-hover);
+  border-color: var(--cs-btn-primary-border-hover);
+}
+
+.cs-hero-slide-ctas .button.secondary {
+  background-color: var(--cs-btn-ghost-bg);
+  border-color: var(--cs-btn-ghost-border);
+  color: var(--cs-btn-ghost-text);
+  border-radius: var(--cs-btn-primary-radius);
+  padding: var(--cs-btn-primary-padding-y) var(--cs-btn-primary-padding-x);
+  font-weight: var(--cs-font-weight-ui);
+  transition: var(--cs-transition-button);
+}
+
+.cs-hero-slide-ctas .button.secondary:hover,
+.cs-hero-slide-ctas .button.secondary:focus-visible {
+  background-color: var(--cs-btn-ghost-bg-hover);
+  color: var(--cs-btn-ghost-text-hover);
+}
+
+/* Carousel controls */
+.cs-hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--cs-space-xs);
+  padding: var(--cs-space-sm) 0;
+}
+
+.cs-hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cs-color-border);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--cs-duration-fast) var(--cs-ease-default);
+}
+
+.cs-hero-dot.is-active {
+  background: var(--cs-color-brand-primary);
+}
+
+.cs-hero-dot:focus-visible {
+  outline: 3px solid var(--cs-color-focus);
+  outline-offset: 2px;
+}
+
+.cs-hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--cs-color-text-on-dark);
+  cursor: pointer;
+  z-index: 2;
+  padding: var(--cs-space-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--cs-duration-fast) var(--cs-ease-default);
+}
+
+.cs-hero-arrow-prev {
+  left: var(--cs-space-sm);
+}
+
+.cs-hero-arrow-next {
+  right: var(--cs-space-sm);
+}
+
+.cs-hero-arrow:hover {
+  background: var(--cs-palette-gray-100);
+  color: var(--cs-color-brand-primary);
+}
+
+.cs-hero-arrow:focus-visible {
+  outline: 3px solid var(--cs-color-focus);
+  outline-offset: 2px;
+}
+
+@media (width >= 600px) {
+  .cs-hero-slide {
+    padding: var(--cs-space-xxl) var(--cs-space-xl);
+  }
+
+  .cs-hero-slide-ctas {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (width >= 900px) {
+  .cs-hero-slide {
+    min-height: 560px;
+    padding: var(--cs-space-xxl) var(--cs-space-xxl);
+  }
+
+  .cs-hero-slide-content {
+    text-align: left;
+    max-width: var(--cs-grid-max-width);
+    padding: 0 var(--cs-space-xl);
+  }
+
+  .cs-hero-body {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .cs-hero-slide-ctas {
+    justify-content: flex-start;
+  }
+
+  .cs-hero.image .cs-hero-slide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--cs-space-xl);
+    align-items: center;
+  }
+}
+
+@media (width >= 1200px) {
+  .cs-hero-slide {
+    min-height: 640px;
+    padding: var(--cs-space-xxxl) var(--cs-space-xxl);
+  }
+}

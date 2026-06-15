@@ -1,0 +1,295 @@
+/*
+ * CrowdStrike brand design token overrides for EDS boilerplate.
+ *
+ * This file overrides the EDS defaults defined in styles/styles.css and adds
+ * CrowdStrike-specific custom properties. It is the single source of truth for
+ * all brand colours, gradients, typography, spacing, motion, and surface tokens
+ * used by cs-* block stylesheets.
+ *
+ * Do NOT add hex or rgb literals in block CSS files. All block colours must
+ * reference a token defined here or in styles/styles.css.
+ *
+ * Load order: styles/styles.css (EDS defaults) -> styles/config/overrides.css
+ * Add to styles/lazy-styles.css: @import url("config/overrides.css");
+ *
+ * Sections:
+ *  1. Palette raw scale (--cs-palette-*)
+ *  2. Semantic tokens, EDS overrides, gradients, typography, spacing,
+ *     border radii, button tokens, motion, shadows, layout (all in one :root)
+ *  3. Responsive overrides at 600px, 900px, 1200px
+ *  4. Reduced-motion overrides
+ *  5. Dark-section utility ([data-section-theme="dark"])
+ */
+
+/* stylelint-disable custom-property-pattern */
+
+:root {
+  /* ==========================================================================
+     1. BRAND COLOUR PALETTE (raw scale)
+     Use semantic aliases from section 2 in block CSS — do not use palette
+     tokens directly.
+     ========================================================================== */
+
+  /* CrowdStrike primary red */
+  --cs-palette-red-500: #ec0000;
+  --cs-palette-red-700: #c00000;
+  --cs-palette-red-900: #8b0000;
+
+  /* Brand blues */
+  --cs-palette-blue-500: #1f60a2;
+  --cs-palette-blue-700: #174880;
+  --cs-palette-electric-blue-500: #0024ff;
+  --cs-palette-electric-blue-700: #001acc;
+
+  /* Neutrals */
+  --cs-palette-black: #000;
+  --cs-palette-gray-900: #131313;
+  --cs-palette-gray-700: #333;
+  --cs-palette-gray-500: #707070;
+  --cs-palette-gray-400: #949494;
+  --cs-palette-gray-200: #d4d4d4;
+  --cs-palette-gray-100: #f8f8f8;
+  --cs-palette-white: #fff;
+  --cs-palette-overlay: rgb(57 57 57 / 65%);
+
+  /* ==========================================================================
+     2a. SEMANTIC COLOUR TOKENS — EDS default overrides
+     ========================================================================== */
+
+  /* Surface */
+  --background-color: var(--cs-palette-white);
+  --light-color: var(--cs-palette-gray-100);
+  --dark-color: var(--cs-palette-gray-500);
+  --text-color: var(--cs-palette-gray-900);
+
+  /* Links (overrides EDS blue) */
+  --link-color: var(--cs-palette-red-500);
+  --link-hover-color: var(--cs-palette-red-700);
+
+  /* ==========================================================================
+     2b. CROWDSTRIKE-SPECIFIC SEMANTIC SURFACE TOKENS
+     ========================================================================== */
+  --cs-color-surface-dark: var(--cs-palette-black);
+  --cs-color-surface-overlay: var(--cs-palette-overlay);
+  --cs-color-surface-card: var(--cs-palette-white);
+  --cs-color-surface-section-alt: var(--cs-palette-gray-100);
+
+  /* Brand colour aliases */
+  --cs-color-brand-primary: var(--cs-palette-red-500);
+  --cs-color-brand-primary-dark: var(--cs-palette-red-700);
+  --cs-color-brand-secondary: var(--cs-palette-blue-500);
+  --cs-color-brand-secondary-dark: var(--cs-palette-blue-700);
+  --cs-color-brand-electric: var(--cs-palette-electric-blue-500);
+  --cs-color-brand-electric-dark: var(--cs-palette-electric-blue-700);
+
+  /* Text hierarchy */
+  --cs-color-text-primary: var(--cs-palette-gray-900);
+  --cs-color-text-secondary: var(--cs-palette-gray-400);
+  --cs-color-text-tertiary: var(--cs-palette-gray-500);
+  --cs-color-text-on-dark: var(--cs-palette-white);
+  --cs-color-text-on-dark-secondary: var(--cs-palette-gray-200);
+
+  /* Focus ring */
+  --cs-color-focus: var(--cs-palette-electric-blue-500);
+
+  /* Borders */
+  --cs-color-border: var(--cs-palette-gray-200);
+  --cs-color-border-brand: var(--cs-palette-red-500);
+
+  /* ==========================================================================
+     2c. GRADIENTS
+     ========================================================================== */
+  --cs-gradient-hero: linear-gradient(135deg, #ec0000 0%, #1f60a2 100%);
+  --cs-gradient-hero-dark: linear-gradient(135deg, #000 0%, #0024ff 100%);
+  --cs-gradient-dark-section: linear-gradient(135deg, #000 0%, #1f60a2 100%);
+  --cs-gradient-red-sweep: linear-gradient(90deg, #ec0000 0%, #c00000 100%);
+
+  /* ==========================================================================
+     2d. TYPOGRAPHY
+     Titillium Web files must be added to fonts/ and registered in
+     styles/fonts.css before the brand font becomes active.
+     ========================================================================== */
+  --body-font-family: "titillium-web", roboto, roboto-fallback, sans-serif;
+  --heading-font-family: "titillium-web", roboto-condensed, roboto-condensed-fallback, sans-serif;
+  --cs-font-family-brand: "titillium-web", roboto-condensed, sans-serif;
+
+  /* UI label weight */
+  --cs-font-weight-ui: 600;
+
+  /* Eyebrow label */
+  --cs-font-weight-eyebrow: 600;
+  --cs-font-size-eyebrow: 0.75rem;
+  --cs-letter-spacing-eyebrow: 0.08em;
+  --cs-text-transform-eyebrow: uppercase;
+
+  /* ==========================================================================
+     2e. HEADING SIZE SCALE — mobile base values
+     ========================================================================== */
+  --heading-font-size-xxl: 38px;
+  --heading-font-size-xl: 30px;
+  --heading-font-size-l: 22px;
+  --heading-font-size-m: 20px;
+  --heading-font-size-s: 18px;
+  --heading-font-size-xs: 16px;
+
+  /* Body scale — mobile base values */
+  --body-font-size-m: 18px;
+  --body-font-size-s: 16px;
+  --body-font-size-xs: 14px;
+
+  /* ==========================================================================
+     2f. SPACING SCALE
+     ========================================================================== */
+  --cs-space-xs: 8px;
+  --cs-space-sm: 16px;
+  --cs-space-md: 24px;
+  --cs-space-lg: 32px;
+  --cs-space-xl: 48px;
+  --cs-space-xxl: 64px;
+  --cs-space-xxxl: 96px;
+
+  /* ==========================================================================
+     2g. BORDER RADII
+     ========================================================================== */
+  --cs-radius-button: 4px;
+  --cs-radius-card: 6px;
+  --cs-radius-badge: 2px;
+
+  /* ==========================================================================
+     2h. BUTTON TOKENS
+     ========================================================================== */
+
+  /* Primary CTA (solid red) */
+  --cs-btn-primary-bg: var(--cs-palette-red-500);
+  --cs-btn-primary-bg-hover: var(--cs-palette-red-700);
+  --cs-btn-primary-bg-active: var(--cs-palette-red-900);
+  --cs-btn-primary-text: var(--cs-palette-white);
+  --cs-btn-primary-border: var(--cs-palette-red-500);
+  --cs-btn-primary-border-hover: var(--cs-palette-red-700);
+  --cs-btn-primary-padding-x: 24px;
+  --cs-btn-primary-padding-y: 12px;
+  --cs-btn-primary-radius: var(--cs-radius-button);
+
+  /* Secondary CTA (outlined red) */
+  --cs-btn-secondary-bg: transparent;
+  --cs-btn-secondary-bg-hover: var(--cs-palette-red-500);
+  --cs-btn-secondary-text: var(--cs-palette-red-500);
+  --cs-btn-secondary-text-hover: var(--cs-palette-white);
+  --cs-btn-secondary-border: var(--cs-palette-red-500);
+
+  /* Ghost CTA (white outline — dark backgrounds) */
+  --cs-btn-ghost-bg: transparent;
+  --cs-btn-ghost-bg-hover: var(--cs-palette-white);
+  --cs-btn-ghost-text: var(--cs-palette-white);
+  --cs-btn-ghost-text-hover: var(--cs-palette-gray-900);
+  --cs-btn-ghost-border: var(--cs-palette-white);
+
+  /* Disabled state (shared across all button variants) */
+  --cs-btn-disabled-bg: var(--cs-palette-gray-200);
+  --cs-btn-disabled-text: var(--cs-palette-gray-400);
+  --cs-btn-disabled-border: var(--cs-palette-gray-200);
+
+  /* ==========================================================================
+     2i. MOTION TOKENS
+     ========================================================================== */
+  --cs-duration-fast: 150ms;
+  --cs-duration-base: 200ms;
+  --cs-duration-slow: 300ms;
+  --cs-duration-carousel: 5000ms;
+  --cs-ease-default: ease;
+  --cs-ease-in: ease-in;
+  --cs-ease-out: ease-out;
+  --cs-transition-button: background-color var(--cs-duration-fast) var(--cs-ease-default),
+    border-color var(--cs-duration-fast) var(--cs-ease-default),
+    color var(--cs-duration-fast) var(--cs-ease-default);
+  --cs-transition-card: transform var(--cs-duration-base) var(--cs-ease-out),
+    box-shadow var(--cs-duration-base) var(--cs-ease-out);
+  --cs-transition-fade: opacity var(--cs-duration-slow) var(--cs-ease-in);
+
+  /* ==========================================================================
+     2j. SHADOW TOKENS
+     ========================================================================== */
+  --cs-shadow-card: 0 2px 8px rgb(0 0 0 / 10%);
+  --cs-shadow-card-hover: 0 8px 24px rgb(0 0 0 / 18%);
+  --cs-shadow-dropdown: 0 4px 16px rgb(0 0 0 / 14%);
+
+  /* ==========================================================================
+     2k. LAYOUT / GRID TOKENS — mobile base values
+     ========================================================================== */
+  --cs-grid-max-width: 1272px;
+  --cs-grid-gutter: var(--cs-space-sm);
+  --cs-grid-side-padding: var(--cs-space-md);
+
+  /* ==========================================================================
+     2l. NAV HEIGHT OVERRIDE
+     ========================================================================== */
+  --nav-height: 72px;
+}
+
+/* ============================================================
+   3. RESPONSIVE OVERRIDES — mobile-first
+   ============================================================ */
+
+@media (width >= 600px) {
+  :root {
+    --cs-grid-gutter: var(--cs-space-md);
+    --cs-grid-side-padding: var(--cs-space-lg);
+  }
+}
+
+@media (width >= 900px) {
+  :root {
+    /* Heading scale */
+    --heading-font-size-xxl: 56px;
+    --heading-font-size-xl: 44px;
+    --heading-font-size-l: 28px;
+    --heading-font-size-m: 24px;
+    --heading-font-size-s: 20px;
+    --heading-font-size-xs: 18px;
+
+    /* Body scale */
+    --body-font-size-m: 18px;
+    --body-font-size-s: 16px;
+    --body-font-size-xs: 14px;
+
+    /* Grid */
+    --cs-grid-gutter: var(--cs-space-lg);
+    --cs-grid-side-padding: var(--cs-space-xl);
+  }
+}
+
+@media (width >= 1200px) {
+  :root {
+    --cs-grid-side-padding: var(--cs-space-xxl);
+  }
+}
+
+/* ============================================================
+   4. REDUCED-MOTION — zero-out all motion tokens
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --cs-duration-fast: 0ms;
+    --cs-duration-base: 0ms;
+    --cs-duration-slow: 0ms;
+    --cs-transition-button: none;
+    --cs-transition-card: none;
+    --cs-transition-fade: none;
+  }
+}
+
+/* ============================================================
+   5. DARK-SECTION UTILITY
+   Blocks that render on a dark background set
+   data-section-theme="dark" on their parent .section element
+   via their decorate() function. These tokens cascade into
+   child block selectors automatically.
+   ============================================================ */
+
+[data-section-theme="dark"] {
+  --background-color: var(--cs-color-surface-dark);
+  --text-color: var(--cs-color-text-on-dark);
+  --link-color: var(--cs-palette-white);
+  --link-hover-color: var(--cs-palette-gray-200);
+}

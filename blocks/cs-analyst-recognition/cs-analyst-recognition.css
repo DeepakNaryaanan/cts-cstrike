@@ -1,0 +1,107 @@
+/* cs-analyst-recognition block */
+
+.cs-analyst-recognition-heading {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 var(--cs-space-lg);
+  color: var(--cs-color-text-primary);
+}
+
+.cs-analyst-recognition-strip {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--cs-space-md);
+  padding-bottom: var(--cs-space-sm);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cs-analyst-recognition-card {
+  flex: 0 0 280px;
+  min-width: 280px;
+  background: var(--cs-color-surface-card);
+  border: 1px solid var(--cs-color-border);
+  border-radius: var(--cs-radius-card);
+  box-shadow: var(--cs-shadow-card);
+  padding: var(--cs-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--cs-space-xs);
+  scroll-snap-align: start;
+}
+
+.cs-analyst-recognition-logo {
+  height: 48px;
+  margin-bottom: var(--cs-space-xs);
+}
+
+.cs-analyst-recognition-logo picture,
+.cs-analyst-recognition-logo img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.cs-analyst-recognition-headline {
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  margin: 0;
+  color: var(--cs-color-text-primary);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.cs-analyst-recognition-subtitle {
+  font-size: var(--body-font-size-xs);
+  color: var(--cs-color-text-tertiary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cs-analyst-recognition-cta {
+  margin-top: auto;
+  align-self: flex-start;
+  background-color: var(--cs-btn-primary-bg);
+  border-color: var(--cs-btn-primary-border);
+  color: var(--cs-btn-primary-text);
+  border-radius: var(--cs-btn-primary-radius);
+  padding: var(--cs-btn-primary-padding-y) var(--cs-btn-primary-padding-x);
+  font-size: var(--body-font-size-xs);
+  font-weight: var(--cs-font-weight-ui);
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--cs-transition-button);
+}
+
+.cs-analyst-recognition-cta:hover,
+.cs-analyst-recognition-cta:focus-visible {
+  background-color: var(--cs-btn-primary-bg-hover);
+  border-color: var(--cs-btn-primary-border-hover);
+  color: var(--cs-btn-primary-text);
+}
+
+.cs-analyst-recognition-cta:focus-visible {
+  outline: 3px solid var(--cs-color-focus);
+  outline-offset: 2px;
+}
+
+@media (width >= 900px) {
+  .cs-analyst-recognition-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+  }
+
+  .cs-analyst-recognition-card {
+    flex: none;
+    min-width: 0;
+  }
+}

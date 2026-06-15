@@ -1,0 +1,133 @@
+/* cs-feature-pillars block */
+
+.cs-feature-pillars {
+  background: var(--light-color);
+  padding: var(--cs-space-xl) var(--cs-space-md);
+}
+
+.cs-feature-pillars.dark {
+  background: var(--cs-color-surface-dark);
+  color: var(--cs-color-text-on-dark);
+}
+
+.cs-feature-pillars-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--cs-space-xl);
+}
+
+.cs-feature-pillars-heading {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  margin: 0 0 var(--cs-space-sm);
+  color: var(--cs-color-text-primary);
+}
+
+.cs-feature-pillars.dark .cs-feature-pillars-heading {
+  color: var(--cs-color-text-on-dark);
+}
+
+.cs-feature-pillars-intro-text {
+  font-size: var(--body-font-size-s);
+  color: var(--cs-color-text-tertiary);
+  margin: 0;
+}
+
+.cs-feature-pillars.dark .cs-feature-pillars-intro-text {
+  color: var(--cs-color-text-on-dark-secondary);
+}
+
+.cs-feature-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--cs-space-md);
+  max-width: var(--cs-grid-max-width);
+  margin: 0 auto;
+}
+
+.cs-feature-pillars-card {
+  background: var(--cs-color-surface-card);
+  border-radius: var(--cs-radius-card);
+  padding: var(--cs-space-md);
+  box-shadow: var(--cs-shadow-card);
+}
+
+.cs-feature-pillars.dark .cs-feature-pillars-card {
+  background: var(--cs-palette-gray-900);
+  box-shadow: none;
+}
+
+.cs-feature-pillars-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--cs-space-sm);
+  color: var(--cs-color-brand-primary);
+}
+
+.cs-feature-pillars-icon img,
+.cs-feature-pillars-icon picture {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cs-feature-pillars-card-title {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 600;
+  margin: 0 0 var(--cs-space-xs);
+  color: var(--cs-color-text-primary);
+}
+
+.cs-feature-pillars.dark .cs-feature-pillars-card-title {
+  color: var(--cs-color-text-on-dark);
+}
+
+.cs-feature-pillars-card-body {
+  font-size: var(--body-font-size-s);
+  color: var(--cs-color-text-tertiary);
+  margin: 0 0 var(--cs-space-sm);
+}
+
+.cs-feature-pillars.dark .cs-feature-pillars-card-body {
+  color: var(--cs-color-text-on-dark-secondary);
+}
+
+.cs-feature-pillars-card-cta {
+  color: var(--link-color);
+  font-size: var(--body-font-size-s);
+  font-weight: var(--cs-font-weight-ui);
+  text-decoration: none;
+}
+
+.cs-feature-pillars-card-cta:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+.cs-feature-pillars-card-cta:focus-visible {
+  outline: 3px solid var(--cs-color-focus);
+  outline-offset: 2px;
+}
+
+@media (width >= 600px) {
+  .cs-feature-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cs-feature-pillars {
+    padding: var(--cs-space-xxxl) var(--cs-space-xxl);
+  }
+
+  .cs-feature-pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--cs-space-lg);
+  }
+
+  .cs-feature-pillars.col-2 .cs-feature-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
