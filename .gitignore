@@ -8,6 +8,14 @@ helix-importer-ui
 *.bak
 .idea
 
+# User stories, tests, and Playwright artifacts (not tracked)
+user_story/
+tests/
+playwright.config.js
+*.spec.js
+test-results/
+playwright-report/
+
 # Ensure these files are tracked
 !CLAUDE.md
 !AGENTS.md
