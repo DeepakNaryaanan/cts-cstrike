@@ -1,0 +1,194 @@
+/* cs-testimonials block — mobile-first, all selectors scoped to .cs-testimonials */
+
+.cs-testimonials {
+  background-color: var(--cs-white);
+  padding: 40px 24px;
+}
+
+.cs-testimonials .cs-testimonials-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: var(--cs-maxwidth);
+  margin: 0 auto 32px;
+}
+
+.cs-testimonials .cs-testimonials-heading {
+  margin: 0;
+  font-size: var(--heading-font-size-l);
+  color: var(--cs-near-black);
+}
+
+.cs-testimonials .cs-testimonials-view-all {
+  display: inline-block;
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  color: var(--cs-red);
+  text-decoration: none;
+}
+
+.cs-testimonials .cs-testimonials-view-all:hover,
+.cs-testimonials .cs-testimonials-view-all:focus-visible {
+  color: var(--cs-red-hover);
+  text-decoration: underline;
+}
+
+.cs-testimonials .cs-testimonials-track {
+  max-width: var(--cs-maxwidth);
+  margin: 0 auto;
+  position: relative;
+}
+
+.cs-testimonials .cs-testimonials-slide {
+  display: none;
+  background-color: var(--cs-grey-50);
+  border-radius: var(--cs-radius-lg);
+  padding: 32px 24px;
+}
+
+.cs-testimonials .cs-testimonials-slide.is-active {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs-testimonials .cs-testimonials-quote {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.cs-testimonials .cs-testimonials-quote::before {
+  content: '\201C';
+  display: block;
+  font-size: 64px;
+  line-height: 1;
+  color: var(--cs-red);
+  margin-bottom: -16px;
+  font-family: Georgia, serif;
+}
+
+.cs-testimonials .cs-testimonials-quote p {
+  margin: 0;
+  font-size: var(--heading-font-size-xs);
+  line-height: 1.5;
+  color: var(--cs-near-black);
+  font-style: italic;
+}
+
+.cs-testimonials .cs-testimonials-attribution {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  color: var(--cs-near-black);
+}
+
+.cs-testimonials .cs-testimonials-attribution strong {
+  font-weight: 700;
+  color: var(--cs-near-black);
+}
+
+.cs-testimonials .cs-testimonials-attribution span {
+  color: var(--cs-grey-text);
+}
+
+.cs-testimonials .cs-testimonials-cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em 1.4em;
+  border-radius: var(--cs-radius);
+  background-color: var(--cs-red);
+  color: var(--cs-white);
+  font-weight: 600;
+  font-size: var(--body-font-size-xs);
+  text-decoration: none;
+  border: 1px solid var(--cs-red);
+  line-height: 1.25;
+}
+
+.cs-testimonials .cs-testimonials-cta:hover,
+.cs-testimonials .cs-testimonials-cta:focus-visible {
+  background-color: var(--cs-red-hover);
+  border-color: var(--cs-red-hover);
+  color: var(--cs-white);
+  text-decoration: none;
+}
+
+.cs-testimonials .cs-testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  max-width: var(--cs-maxwidth);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cs-testimonials .cs-testimonials-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--cs-grey-300);
+  background-color: var(--cs-grey-300);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.cs-testimonials .cs-testimonials-dot[aria-current='true'] {
+  background-color: var(--cs-red);
+  border-color: var(--cs-red);
+}
+
+.cs-testimonials .cs-testimonials-dot:hover,
+.cs-testimonials .cs-testimonials-dot:focus-visible {
+  background-color: var(--cs-red-hover);
+  border-color: var(--cs-red-hover);
+  outline: 2px solid var(--cs-red);
+  outline-offset: 2px;
+}
+
+@media (width >= 600px) {
+  .cs-testimonials {
+    padding: 48px 32px;
+  }
+
+  .cs-testimonials .cs-testimonials-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cs-testimonials .cs-testimonials-slide {
+    padding: 40px 32px;
+  }
+}
+
+@media (width >= 900px) {
+  .cs-testimonials {
+    padding: 64px 32px;
+  }
+
+  .cs-testimonials .cs-testimonials-heading {
+    font-size: var(--heading-font-size-xl);
+  }
+
+  .cs-testimonials .cs-testimonials-quote p {
+    font-size: var(--heading-font-size-m);
+  }
+
+  .cs-testimonials .cs-testimonials-slide {
+    padding: 48px 40px;
+  }
+}
+
+@media (width >= 1200px) {
+  .cs-testimonials {
+    padding: 80px 32px;
+  }
+
+  .cs-testimonials .cs-testimonials-quote p {
+    font-size: var(--heading-font-size-s);
+  }
+}

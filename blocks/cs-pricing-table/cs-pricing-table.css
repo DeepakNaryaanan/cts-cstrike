@@ -1,0 +1,234 @@
+/* cs-pricing-table block
+   Light-surface pricing section with billing toggle and plan cards.
+   Mobile-first; cards stack vertically, then go 3-across at 900 px. */
+
+.cs-pricing-table {
+  padding: 48px 24px;
+  background-color: var(--cs-white);
+  text-align: center;
+}
+
+/* Utility: used by JS to hide annual/monthly prices */
+.cs-pricing-table .hidden {
+  display: none;
+}
+
+/* ── Heading & subtitle ──────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-table-heading {
+  margin: 0 0 12px;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  line-height: 1.2;
+  color: var(--cs-near-black);
+}
+
+.cs-pricing-table .cs-pricing-table-subtitle {
+  margin: 0 0 32px;
+  font-size: var(--body-font-size-s);
+  color: var(--cs-grey-text);
+}
+
+/* ── Billing tabs ────────────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-table-tabs {
+  display: inline-flex;
+  gap: 0;
+  margin-bottom: 40px;
+  border: 1px solid var(--cs-grey-200);
+  border-radius: var(--cs-radius);
+  overflow: hidden;
+}
+
+.cs-pricing-table .cs-pricing-table-tab {
+  padding: 8px 20px;
+  background: var(--cs-white);
+  border: none;
+  color: var(--cs-grey-text);
+  cursor: pointer;
+  font-size: var(--body-font-size-xs);
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  line-height: 1.4;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.cs-pricing-table .cs-pricing-table-tab.is-active {
+  background-color: var(--cs-red);
+  color: var(--cs-white);
+}
+
+.cs-pricing-table .cs-pricing-table-tab:focus-visible {
+  outline: 2px solid var(--cs-red);
+  outline-offset: -2px;
+}
+
+/* ── Plans container ─────────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-table-plans {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: var(--cs-maxwidth);
+  margin: 0 auto;
+}
+
+/* ── Individual plan card ────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-table-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 24px;
+  background-color: var(--cs-white);
+  border: 1px solid var(--cs-grey-200);
+  border-radius: var(--cs-radius-lg);
+  text-align: left;
+}
+
+.cs-pricing-table .cs-pricing-table-plan.is-featured {
+  border-color: var(--cs-red);
+  border-width: 2px;
+}
+
+/* ── Recommended badge ───────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-table-badge {
+  align-self: flex-start;
+  padding: 4px 12px;
+  background-color: var(--cs-red);
+  border-radius: var(--cs-radius);
+  color: var(--cs-white);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ── Plan name ───────────────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-table-plan-name {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  color: var(--cs-near-black);
+}
+
+/* ── Price display ───────────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-monthly,
+.cs-pricing-table .cs-pricing-annual {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  color: var(--cs-near-black);
+  line-height: 1.2;
+}
+
+/* ── CTA link ────────────────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-table-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: var(--cs-red);
+  border-radius: var(--cs-radius);
+  color: var(--cs-white);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cs-pricing-table .cs-pricing-table-cta:hover,
+.cs-pricing-table .cs-pricing-table-cta:focus-visible {
+  background-color: var(--cs-red-hover);
+  color: var(--cs-white);
+  text-decoration: none;
+}
+
+.cs-pricing-table .cs-pricing-table-cta:focus-visible {
+  outline: 2px solid var(--cs-red);
+  outline-offset: 3px;
+}
+
+/* ── Feature list ────────────────────────────────────────────────────────── */
+
+.cs-pricing-table .cs-pricing-table-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-pricing-table .cs-pricing-table-feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--body-font-size-xs);
+  color: var(--cs-grey-text);
+}
+
+.cs-pricing-table .cs-pricing-table-feature.is-included {
+  color: var(--cs-near-black);
+}
+
+.cs-pricing-table .cs-pricing-table-feature-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.cs-pricing-table .cs-pricing-table-feature.is-included .cs-pricing-table-feature-icon {
+  background-color: var(--cs-red);
+  color: var(--cs-white);
+}
+
+.cs-pricing-table .cs-pricing-table-feature.is-excluded .cs-pricing-table-feature-icon {
+  background-color: var(--cs-grey-200);
+  color: var(--cs-grey-mid);
+}
+
+/* ── Responsive: 600 px ──────────────────────────────────────────────────── */
+
+@media (width >= 600px) {
+  .cs-pricing-table {
+    padding: 56px 32px;
+  }
+}
+
+/* ── Responsive: 900 px — 3-column plans grid ────────────────────────────── */
+
+@media (width >= 900px) {
+  .cs-pricing-table {
+    padding: 80px 32px;
+  }
+
+  .cs-pricing-table .cs-pricing-table-plans {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .cs-pricing-table .cs-pricing-table-plan {
+    flex: 1;
+  }
+}
+
+/* ── Responsive: 1200 px ─────────────────────────────────────────────────── */
+
+@media (width >= 1200px) {
+  .cs-pricing-table {
+    padding: 96px 32px;
+  }
+}

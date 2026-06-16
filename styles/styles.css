@@ -11,17 +11,41 @@
  */
 
 :root {
-  /* colors */
-  --background-color: white;
-  --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  /* ---------------------------------------------------------------
+   * CrowdStrike brand tokens — extracted from www.crowdstrike.com
+   * Brand red #ec0000, bright red #fc0000, near-black surfaces,
+   * neutral grey ramp, 8px control radius.
+   * --------------------------------------------------------------- */
+  --cs-red: #ec0000;
+  --cs-red-bright: #fc0000;
+  --cs-red-hover: #c40000;
+  --cs-black: #000;
+  --cs-near-black: #131313;
+  --cs-dark-surface: #0d0d0f;
+  --cs-dark-surface-2: #181818;
+  --cs-white: #fff;
+  --cs-grey-50: #f8f8f8;
+  --cs-grey-100: #efefef;
+  --cs-grey-200: #e0e0e0;
+  --cs-grey-300: #c9c9c9;
+  --cs-silver: #a7a9ac;
+  --cs-grey-mid: #707070;
+  --cs-grey-text: #555;
+  --cs-radius: 8px;
+  --cs-radius-lg: 12px;
+  --cs-maxwidth: 1200px;
 
-  /* fonts */
-  --body-font-family: roboto, roboto-fallback, sans-serif;
-  --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;
+  /* colors */
+  --background-color: var(--cs-white);
+  --light-color: var(--cs-grey-50);
+  --dark-color: var(--cs-grey-mid);
+  --text-color: var(--cs-near-black);
+  --link-color: var(--cs-red);
+  --link-hover-color: var(--cs-red-hover);
+
+  /* fonts — lead with CrowdStrike type, fall back through its own chain */
+  --body-font-family: 'HaasGrotDisp-45Light', roboto, helvetica, arial, sans-serif;
+  --heading-font-family: 'CrowdStrikeSharpSans-Bold', 'Sharp Sans', roboto-condensed, helvetica, arial, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -178,11 +202,11 @@ button.button {
   justify-content: center;
   max-width: 100%;
   margin: 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border: 1px solid transparent;
+  border-radius: var(--cs-radius);
+  padding: 0.6em 1.4em;
   font: inherit;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.25;
   text-decoration: none;
   cursor: pointer;
@@ -322,4 +346,23 @@ main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
+}
+
+/* dark section theme — used by hero, product-showcase, adversary CTA */
+main .section[data-section-theme="dark"] {
+  margin: 0;
+  padding: 64px 0;
+  background-color: var(--cs-black);
+  color: var(--cs-white);
+}
+
+main .section[data-section-theme="dark"] h1,
+main .section[data-section-theme="dark"] h2,
+main .section[data-section-theme="dark"] h3,
+main .section[data-section-theme="dark"] h4 {
+  color: var(--cs-white);
+}
+
+main .section[data-section-theme="dark"] a:any-link {
+  color: var(--cs-white);
 }

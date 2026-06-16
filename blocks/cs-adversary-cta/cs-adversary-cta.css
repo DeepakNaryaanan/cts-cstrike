@@ -1,0 +1,136 @@
+/* cs-adversary-cta — dark full-width adversary CTA banner */
+
+.cs-adversary-cta {
+  width: 100%;
+}
+
+.cs-adversary-cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 48px 24px;
+  max-width: var(--cs-maxwidth);
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.cs-adversary-cta-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cs-adversary-cta-eyebrow {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cs-silver);
+}
+
+.cs-adversary-cta-headline {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: clamp(2rem, 5vw, var(--heading-font-size-xxl));
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--cs-white);
+}
+
+.cs-adversary-cta-body {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--cs-silver);
+  max-width: 640px;
+}
+
+.cs-adversary-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cs-adversary-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65em 1.6em;
+  background-color: var(--cs-red);
+  color: var(--cs-white);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  border: 2px solid var(--cs-red);
+  border-radius: var(--cs-radius);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cs-adversary-cta-btn-primary:hover,
+.cs-adversary-cta-btn-primary:focus-visible {
+  background-color: var(--cs-red-hover);
+  border-color: var(--cs-red-hover);
+  text-decoration: none;
+  color: var(--cs-white);
+}
+
+.cs-adversary-cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65em 1.6em;
+  background-color: transparent;
+  color: var(--cs-white);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  border: 2px solid var(--cs-white);
+  border-radius: var(--cs-radius);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.cs-adversary-cta-btn-secondary:hover,
+.cs-adversary-cta-btn-secondary:focus-visible {
+  background-color: var(--cs-white);
+  color: var(--cs-black);
+  text-decoration: none;
+}
+
+@media (width >= 600px) {
+  .cs-adversary-cta-content {
+    padding: 64px 40px;
+  }
+}
+
+@media (width >= 900px) {
+  .cs-adversary-cta-content {
+    padding: 80px 64px;
+    gap: 40px;
+  }
+
+  .cs-adversary-cta-body {
+    font-size: var(--body-font-size-s);
+  }
+}
+
+@media (width >= 1200px) {
+  .cs-adversary-cta-content {
+    padding: 96px 80px;
+  }
+}

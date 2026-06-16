@@ -1,0 +1,123 @@
+/* cs-analyst-recognition block
+   Dark-surface recognition section with a 3-card strip.
+   Mobile-first; cards stack vertically, then go 3-across at 900 px. */
+
+.cs-analyst-recognition {
+  background-color: var(--cs-dark-surface);
+  color: var(--cs-white);
+  padding: 48px 24px;
+}
+
+.cs-analyst-recognition-heading {
+  margin: 0 0 32px;
+  color: var(--cs-white);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.cs-analyst-recognition-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: var(--cs-maxwidth);
+  margin: 0 auto;
+}
+
+.cs-analyst-recognition-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--cs-dark-surface-2);
+  border-radius: var(--cs-radius-lg);
+  padding: 32px 24px;
+}
+
+.cs-analyst-recognition-logo {
+  line-height: 0;
+}
+
+.cs-analyst-recognition-logo img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.cs-analyst-recognition-headline {
+  margin: 0;
+  color: var(--cs-white);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  line-height: 1.3;
+}
+
+.cs-analyst-recognition-subtitle {
+  margin: 0;
+  color: var(--cs-silver);
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+}
+
+.cs-analyst-recognition-cta {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 10px 20px;
+  background-color: var(--cs-red);
+  border-radius: var(--cs-radius);
+  color: var(--cs-white);
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.cs-analyst-recognition-cta:hover,
+.cs-analyst-recognition-cta:focus-visible {
+  background-color: var(--cs-red-hover);
+  color: var(--cs-white);
+  text-decoration: none;
+}
+
+.cs-analyst-recognition-cta:focus-visible {
+  outline: 2px solid var(--cs-white);
+  outline-offset: 3px;
+}
+
+@media (width >= 600px) {
+  .cs-analyst-recognition {
+    padding: 56px 32px;
+  }
+
+  .cs-analyst-recognition-heading {
+    font-size: var(--heading-font-size-xl);
+  }
+}
+
+@media (width >= 900px) {
+  .cs-analyst-recognition {
+    padding: 80px 32px;
+  }
+
+  .cs-analyst-recognition-strip {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .cs-analyst-recognition-card {
+    flex: 1;
+  }
+
+  .cs-analyst-recognition-heading {
+    font-size: var(--heading-font-size-xxl);
+    margin-bottom: 48px;
+  }
+}
+
+@media (width >= 1200px) {
+  .cs-analyst-recognition {
+    padding: 96px 32px;
+  }
+}

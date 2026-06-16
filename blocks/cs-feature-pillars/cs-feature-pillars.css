@@ -1,0 +1,87 @@
+/* cs-feature-pillars block — dark-surface section with 3-column pillar grid */
+
+.cs-feature-pillars {
+  background-color: var(--cs-dark-surface);
+  color: var(--cs-white);
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.cs-feature-pillars .cs-feature-pillars-heading {
+  margin: 0 0 16px;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: var(--cs-white);
+}
+
+.cs-feature-pillars .cs-feature-pillars-intro-text {
+  margin: 0 auto 40px;
+  max-width: 720px;
+  font-size: var(--body-font-size-s);
+  color: var(--cs-silver);
+  line-height: 1.6;
+}
+
+.cs-feature-pillars .cs-feature-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: var(--cs-maxwidth);
+  margin: 0 auto;
+  text-align: left;
+}
+
+.cs-feature-pillars .cs-feature-pillars-card {
+  background-color: var(--cs-dark-surface-2);
+  border-radius: var(--cs-radius-lg);
+  padding: 28px 24px;
+}
+
+.cs-feature-pillars .cs-feature-pillars-card-title {
+  margin: 0 0 12px;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  color: var(--cs-white);
+}
+
+.cs-feature-pillars .cs-feature-pillars-card-body {
+  margin: 0;
+  font-size: var(--body-font-size-xs);
+  color: var(--cs-silver);
+  line-height: 1.6;
+}
+
+.cs-feature-pillars .cs-feature-pillars-icon {
+  margin-bottom: 16px;
+  width: 40px;
+  height: 40px;
+}
+
+@media (width >= 600px) {
+  .cs-feature-pillars {
+    padding: 56px 32px;
+  }
+}
+
+@media (width >= 900px) {
+  .cs-feature-pillars {
+    padding: 72px 40px;
+  }
+
+  .cs-feature-pillars .cs-feature-pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .cs-feature-pillars .cs-feature-pillars-heading {
+    font-size: var(--heading-font-size-xxl);
+  }
+}
+
+@media (width >= 1200px) {
+  .cs-feature-pillars {
+    padding: 80px 48px;
+  }
+}
